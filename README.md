@@ -1,13 +1,12 @@
 ## WebAdventure – Unreal Engine 5 3D Game
 
-This folder contains the source code and design docs for **WebAdventure**, an ambitious 3D game built with **Unreal Engine 5 (C++)**, targeting desktop first and web delivery later via **Pixel Streaming**.
+This is the source and design docs for **WebAdventure**, a 3D action-adventure prototype built with **Unreal Engine 5 (C++)**, targeting desktop first and web delivery later via **Pixel Streaming**.
 
-This repo is meant to sit **inside an Unreal project**. You will either:
+The repo is a standalone Unreal project: it includes `WebAdventure.uproject` (engine association 5.4), the C++ `Source/`, `Config/`, and a `Content/` skeleton. Open `WebAdventure.uproject` directly in UE 5.4 to build and play. If your engine version differs, right-click the `.uproject` and pick **Switch Unreal Engine version**.
 
-- Create the Unreal project in this directory, or
-- Create it elsewhere and then move or merge the generated `Source/` and `.uproject` into here.
+> The `Content/` subfolders (`Maps/`, `UI/`, `Blueprints/`) are placeholders. Gameplay assets and maps are not committed yet, so you build levels on top of the C++ classes.
 
-> The files here follow standard Unreal 5 C++ conventions, so they will integrate cleanly once you create a matching Unreal project named `WebAdventure`.
+If you would rather start from a fresh Unreal project instead of opening the one here, section 1 covers that path.
 
 ---
 
@@ -23,7 +22,7 @@ This repo is meant to sit **inside an Unreal project**. You will either:
    - In the Epic Games Launcher → Unreal Engine → *Launch*.
    - Click **Games → Next → Third Person (or Blank)**.
    - Set **Project Type = C++**, **Starter Content = On**.
-   - Name it exactly **`WebAdventure`** and set the folder to this directory (`Desktop/Video Game`).
+   - Name it exactly **`WebAdventure`** and set the folder to this directory.
    - Click **Create** and wait for Unreal to generate and open the C++ project.
 
 Once Unreal has generated the project, you will see:
@@ -131,16 +130,7 @@ Read those next to understand gameplay and deployment goals.
 
 This project folder is a **standalone Git repo** for WebAdventure (not your home directory).
 
-- **Clone / remote**: add a remote on GitHub, GitLab, or Bitbucket and push:
-
-  ```bash
-  cd "/Users/tarangjammalamadaka/Desktop/Video Game"
-  git remote add origin <your-repo-url>
-  git branch -M main
-  git push -u origin main
-  ```
-
-- **What to commit**: `.uproject`, `Source/`, `Config/` (when present), `Content/`, `*.md`, `.gitignore`.
+- **What to commit**: `.uproject`, `Source/`, `Config/`, `Content/`, `*.md`, `.gitignore`.
 - **Do not commit**: `Binaries/`, `Intermediate/`, `Saved/`, `DerivedDataCache/` (already listed in `.gitignore`).
 
 If Unreal regenerates solution files locally, they stay ignored unless you choose to commit them for a team workflow.
